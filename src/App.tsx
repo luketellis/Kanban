@@ -1,8 +1,8 @@
 import React from "react";
 import "./App.css";
-import "./Column";
-import Column from "./Column";
-import { states, States } from "./utils/constants";
+import "./components/Column/Column";
+import Column from "./components/Column/Column";
+import { states } from "./utils/constants";
 
 function App() {
   return (
