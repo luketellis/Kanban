@@ -1,23 +1,19 @@
 import React from "react";
 import "./App.css";
+import "./Column";
+import Column from "./Column";
+import { states, States } from "./utils/constants";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <h1>Kanban Board</h1>
+      <div className="container">
+        {states.map((state, i) => (
+          <Column key={i} status={state.status} />
+        ))}
+      </div>
+    </>
   );
 }
 
