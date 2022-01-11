@@ -9,7 +9,9 @@ interface Props {
 function Card({ card }: Props) {
   return (
     <div className="card">
-      <span>{card.id}</span>
+      <span>
+        <strong>{card.id}</strong>
+      </span>
       <h3>{card.title}</h3>
       <div>{card.description}</div>
     </div>
