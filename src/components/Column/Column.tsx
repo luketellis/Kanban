@@ -1,14 +1,25 @@
 import React from "react";
 import Card from "../Card/Card";
 import "./column.css";
-import { State } from "../../interfaces/State";
+import { Status } from "../../types/Status";
 
-function Column({ status }: State) {
+interface Props {
+  status: Status;
+}
+
+function Column({ status }: Props) {
   return (
     <span>
       <h2 className="column">
         {status}
-        <Card card={{ id: 1, title: "Hello", description: "This is me" }} />
+        <Card
+          card={{
+            id: 1,
+            title: "Hello",
+            status: "Backlog",
+            description: "This is me",
+          }}
+        />
       </h2>
     </span>
   );

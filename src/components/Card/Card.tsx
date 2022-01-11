@@ -1,9 +1,9 @@
 import React from "react";
 import "./card.css";
-import { CardInterface } from "../../interfaces/Card";
+import { ICard } from "../../interfaces/ICard";
 
 interface Props {
-  card: CardInterface;
+  card: ICard;
 }
 
 function Card({ card }: Props) {
@@ -11,6 +11,7 @@ function Card({ card }: Props) {
     <div className="card">
       <h3>{card.title}</h3>
       <h4>{card.description}</h4>
+      <h4>{card.id}</h4>
     </div>
   );
 }
