@@ -1,0 +1,25 @@
+.input-btn {
+  transition: all 0.3s ease-in;
+  flex: 1;
+}
+
+.input-btn:hover {
+  color: white;
+  transition: all 0.3s ease-in;
+}
+
+.cancel-btn {
+  background-color: orangered;
+}
+
+.cancel-btn:hover {
+  background-color: red;
+}
+
+.save-btn {
+  background-color: green;
+}
+
+.save-btn:hover {
+  background-color: darkgreen;
+}
