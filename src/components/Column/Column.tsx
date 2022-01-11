@@ -4,7 +4,6 @@ import ColumnHeading from "../ColumnHeading/ColumnHeading";
 import "./column.css";
 import { Status } from "../../types/Status";
 import { ICard } from "../../interfaces/ICard";
-import AddButton from "../AddButton/AddButton";
 import AddContainer from "../AddContainer/AddContainer";
 
 interface Props {
@@ -19,7 +18,6 @@ function Column({ cards, status }: Props) {
       {cards.map((card, i) => {
         return <Card card={card} key={i} />;
       })}
-      <AddButton status={status} />
       <AddContainer status={status} />
     </span>
   );
