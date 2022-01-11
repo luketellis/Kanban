@@ -1,11 +1,18 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap");
 
 h1 {
   font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  text-align: center;
 }
 
 .kanban-container {
   display: flex;
   justify-content: space-around;
   font-family: "Poppins", sans-serif;
+}
+
+.grow:hover {
+  transform: scale(1.05);
+  transition: transform 0.3s;
 }

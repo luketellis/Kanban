@@ -8,7 +8,7 @@ interface Props {
 
 function Card({ card }: Props) {
   return (
-    <div className="card">
+    <div className="card grow">
       <span>
         <strong>{card.id}</strong>
       </span>
