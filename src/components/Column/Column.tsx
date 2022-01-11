@@ -7,18 +7,19 @@ import { ICard } from "../../interfaces/ICard";
 import AddContainer from "../AddContainer/AddContainer";
 
 interface Props {
+  addNewCard(newCard: ICard): void;
   cards: Array<ICard>;
   status: Status;
 }
 
-function Column({ cards, status }: Props) {
+function Column({ addNewCard, cards, status }: Props) {
   return (
     <span className="column">
       <ColumnHeading status={status} />
       {cards.map((card, i) => {
         return <Card card={card} key={i} />;
       })}
-      <AddContainer status={status} />
+      <AddContainer addNewCard={addNewCard} status={status} />
     </span>
   );
 }

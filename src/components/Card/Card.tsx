@@ -12,6 +12,7 @@ function Card({ card }: Props) {
       <span>
         <strong>{card.id}</strong>
       </span>
+      <hr />
       <h3>{card.title}</h3>
       <div>{card.description}</div>
     </div>

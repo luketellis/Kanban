@@ -26,6 +26,10 @@ function App() {
     setCards(testData as Array<ICard>);
   }, []);
 
+  const addNewCard = (newCard: ICard): void => {
+    setCards((prevState) => [...prevState, newCard]);
+  };
+
   return (
     <>
       <h1>Kanban Board</h1>
@@ -33,6 +37,7 @@ function App() {
         {states.map((state, i) => (
           <Column
             key={i}
+            addNewCard={addNewCard}
             cards={getCardsByStatus(state.status as Status)}
             status={state.status as Status}
           />
