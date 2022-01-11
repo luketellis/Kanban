@@ -13,8 +13,7 @@ const addItem = (status: Status): void => {
 function AddButton({ status }: Props) {
   return (
     <div className="add-btn" onClick={() => addItem(status)}>
-      <span className="plus-sign">+</span>
-      <span className="">Add Item</span>
+      <button className="add-span">+ Add Item</button>
     </div>
   );
 }

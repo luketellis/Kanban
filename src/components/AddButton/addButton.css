@@ -4,6 +4,11 @@
   cursor: pointer;
   width: fit-content;
   border-radius: 5px;
-  transition: all 0.3s ease-in;
   user-select: none;
+}
+
+.add-span:hover {
+  background-color: black;
+  color: white;
+  transition: all 0.3s ease-in;
 }
