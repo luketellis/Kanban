@@ -4,6 +4,7 @@ import ColumnHeading from "../ColumnHeading/ColumnHeading";
 import "./column.css";
 import { Status } from "../../types/Status";
 import { ICard } from "../../interfaces/ICard";
+import AddButton from "../AddButton/AddButton";
 
 interface Props {
   cards: Array<ICard>;
@@ -14,9 +15,10 @@ function Column({ cards, status }: Props) {
   return (
     <span className="column">
       <ColumnHeading status={status} />
-      {cards.map((card) => {
-        return <Card card={card} />;
+      {cards.map((card, i) => {
+        return <Card card={card} key={i} />;
       })}
+      <AddButton status={status} />
     </span>
   );
 }
