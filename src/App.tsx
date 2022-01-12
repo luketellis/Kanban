@@ -13,6 +13,7 @@ function App() {
   }
 
   const [cards, setCards] = useState<ICard[]>([]);
+  const [numCards, setNumCards] = useState<number>(0);
 
   const getCardsByStatus = (status: Status): Array<ICard> => {
     const filteredCards = cards.filter((card) => {
@@ -25,6 +26,10 @@ function App() {
   useEffect(() => {
     setCards(testData as Array<ICard>);
   }, []);
+
+  useEffect(() => {
+    setNumCards(cards.length);
+  }, [cards]);
 
   const addNewCard = (newCard: ICard): void => {
     setCards((prevState) => [...prevState, newCard]);
@@ -39,6 +44,7 @@ function App() {
             key={i}
             addNewCard={addNewCard}
             cards={getCardsByStatus(state.status as Status)}
+            numCards={numCards}
             status={state.status as Status}
           />
         ))}

@@ -4,18 +4,17 @@ import { Status } from "../../types/Status";
 import AddButton from "../AddButton/AddButton";
 import { ICard } from "../../interfaces/ICard";
 import InputButton from "../InputButton/InputButton";
+import TextInput from "../TextInput/TextInput";
 
 interface Props {
   addNewCard(newCard: ICard): void;
+  numCards: number;
   status: Status;
 }
 
-const addItem = (status: Status) => {
-  alert(status);
-};
-
-function AddContainer({ addNewCard, status }: Props) {
-  const [newCardName, setNewCardName] = useState<String>("");
+function AddContainer({ addNewCard, numCards, status }: Props) {
+  const [newTitle, setNewTitle] = useState<String>("");
+  const [newDescription, setNewDescription] = useState<String>("");
   const [hidden, setHidden] = useState<String>("");
 
   const toggleHidden = () => {
@@ -28,31 +27,34 @@ function AddContainer({ addNewCard, status }: Props) {
 
   const saveNewCard = () => {
     addNewCard({
-      id: 1,
+      id: ++numCards,
       status: status,
-      title: newCardName as string,
-      description: "",
+      title: newTitle as string,
+      description: newDescription as string,
     });
-    setNewCardName("");
+    setNewTitle("");
     toggleHidden();
   };
 
   return (
     <>
-      <AddButton status={status} onClick={toggleHidden} />
+      <AddButton onClick={toggleHidden} />
       <div className={`add-container ${hidden}`}>
-        <div className="add-input">
-          <input
-            className="add-item"
-            contentEditable="true"
-            value={newCardName as string}
-            onChange={(e) => setNewCardName(e.target.value)}
-          ></input>
-        </div>
+        {/* <div className="add-inputs"> </div> */}
+        <TextInput
+          onChange={setNewTitle}
+          placeholder="New Title..."
+          value={newTitle as string}
+        />
+        <TextInput
+          onChange={setNewDescription}
+          placeholder="New Description..."
+          value={newDescription as string}
+        />
 
         <div className="add-btn-group">
           <InputButton
-            disabled={!newCardName.length as unknown as boolean}
+            disabled={!newTitle.length as unknown as boolean}
             status={status}
             type={"Save"}
             onClick={saveNewCard}
@@ -61,8 +63,6 @@ function AddContainer({ addNewCard, status }: Props) {
         </div>
       </div>
     </>
-
-    //    <div ="add-btn" onClick={() => addItem(status)}>
   );
 }
 

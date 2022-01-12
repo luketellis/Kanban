@@ -6,16 +6,3 @@
   display: flex;
   align-items: stretch;
 }
-
-.add-item {
-  min-height: 100px;
-  height: auto;
-  background-color: white;
-  border: black;
-  border-style: solid;
-  border-radius: 10px;
-  margin: 5px auto;
-  resize: none;
-  color: black;
-  padding: 10px;
-}
