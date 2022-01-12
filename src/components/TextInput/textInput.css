@@ -1,0 +1,12 @@
+.text-input {
+  min-height: 1em;
+  height: 1em;
+  background-color: white;
+  border: black;
+  border-style: solid;
+  border-radius: 10px;
+  margin: 0.2em auto;
+  resize: none;
+  color: black;
+  padding: 10px;
+}
