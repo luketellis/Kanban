@@ -31,6 +31,10 @@ function App() {
     setCards((prevState) => [...prevState, newCard]);
   };
 
+  const removeCard = (id: number): void => {
+    setCards(cards.filter((card) => card.id !== id));
+  };
+
   return (
     <>
       <h1>Kanban Board</h1>
@@ -40,6 +44,7 @@ function App() {
             key={i}
             addNewCard={addNewCard}
             cards={getCardsByStatus(state.status as Status)}
+            removeCard={removeCard}
             numCards={numCards}
             status={state.status as Status}
           />

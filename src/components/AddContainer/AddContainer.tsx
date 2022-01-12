@@ -17,7 +17,7 @@ function AddContainer({ addNewCard, numCards, status }: Props) {
   const [newDescription, setNewDescription] = useState<String>("");
   const [hidden, setHidden] = useState<String>("hidden");
 
-  const toggleHidden = () => {
+  const hideAddContainer = () => {
     if (hidden) {
       setHidden("");
     } else {
@@ -33,12 +33,12 @@ function AddContainer({ addNewCard, numCards, status }: Props) {
       description: newDescription as string,
     });
     setNewTitle("");
-    toggleHidden();
+    hideAddContainer();
   };
 
   return (
     <>
-      <AddButton onClick={toggleHidden} />
+      <AddButton onClick={hideAddContainer} />
       <div className={`add-container ${hidden}`}>
         {/* <div className="add-inputs"> </div> */}
         <TextInput
@@ -59,7 +59,11 @@ function AddContainer({ addNewCard, numCards, status }: Props) {
             type={"Save"}
             onClick={saveNewCard}
           />
-          <InputButton status={status} type={"Cancel"} onClick={toggleHidden} />
+          <InputButton
+            status={status}
+            type={"Cancel"}
+            onClick={hideAddContainer}
+          />
         </div>
       </div>
     </>
