@@ -7,9 +7,9 @@ interface Props {
 
 function AddButton({ onClick }: Props) {
   return (
-    <div className="add-btn" onClick={onClick}>
-      <button className="add-span">+ Add Item</button>
-    </div>
+    <button className="add-btn" onClick={onClick}>
+      + Add Item
+    </button>
   );
 }
 

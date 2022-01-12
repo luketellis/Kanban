@@ -9,11 +9,7 @@ interface Props {
   type: "Cancel" | "Save";
 }
 
-const performAction = (type: "Cancel" | "Save", status: Status): void => {
-  alert(type + " " + status);
-};
-
-function InputButton({ disabled = false, onClick, status, type }: Props) {
+function InputButton({ disabled = false, onClick, type }: Props) {
   return (
     <span
       className={`input-btn ${type.toLowerCase()}-btn ${
@@ -21,7 +17,7 @@ function InputButton({ disabled = false, onClick, status, type }: Props) {
       }`}
       onClick={onClick}
     >
-      <span>{type}</span>
+      <strong>{type}</strong>
     </span>
   );
 }

@@ -15,7 +15,7 @@ interface Props {
 function AddContainer({ addNewCard, numCards, status }: Props) {
   const [newTitle, setNewTitle] = useState<String>("");
   const [newDescription, setNewDescription] = useState<String>("");
-  const [hidden, setHidden] = useState<String>("");
+  const [hidden, setHidden] = useState<String>("hidden");
 
   const toggleHidden = () => {
     if (hidden) {

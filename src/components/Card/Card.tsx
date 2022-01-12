@@ -9,12 +9,12 @@ interface Props {
 function Card({ card }: Props) {
   return (
     <div className="card grow">
-      <span>
+      <span className="default-cursor">
         <strong>{card.id}</strong>
       </span>
       <hr />
-      <h3>{card.title}</h3>
-      <div>{card.description}</div>
+      <h3 className="text-cursor">{card.title}</h3>
+      <div className="text-cursor">{card.description}</div>
     </div>
   );
 }

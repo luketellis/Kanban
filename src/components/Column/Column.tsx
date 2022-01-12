@@ -20,6 +20,7 @@ function Column({ addNewCard, cards, numCards, status }: Props) {
       {cards.map((card, i) => {
         return <Card card={card} key={i} />;
       })}
+
       <AddContainer
         addNewCard={addNewCard}
         numCards={numCards}

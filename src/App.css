@@ -25,3 +25,11 @@ h1 {
   pointer-events: none;
   opacity: 0.2;
 }
+
+.text-cursor {
+  cursor: text;
+}
+
+.default-cursor {
+  cursor: default;
+}

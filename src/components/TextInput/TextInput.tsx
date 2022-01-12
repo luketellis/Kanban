@@ -12,6 +12,7 @@ function TextInput({ onChange, placeholder, value }: Props) {
     <input
       className="text-input"
       onChange={(e) => onChange(e.target.value)}
+      maxLength={30}
       placeholder={placeholder}
       value={value as string}
     ></input>

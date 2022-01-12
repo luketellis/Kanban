@@ -8,10 +8,6 @@ import { testData } from "./utils/constants";
 import { ICard } from "./interfaces/ICard";
 
 function App() {
-  interface IAppState {
-    cards: Array<ICard>;
-  }
-
   const [cards, setCards] = useState<ICard[]>([]);
   const [numCards, setNumCards] = useState<number>(0);
 
