@@ -29,10 +29,11 @@ function AddContainer({ addNewCard, status }: Props) {
   const saveNewCard = () => {
     addNewCard({
       id: 1,
-      status: "Backlog",
-      title: "Learn Storybook",
-      description: "Helps making components",
+      status: status,
+      title: newCardName as string,
+      description: "",
     });
+    setNewCardName("");
     toggleHidden();
   };
 
@@ -41,11 +42,21 @@ function AddContainer({ addNewCard, status }: Props) {
       <AddButton status={status} onClick={toggleHidden} />
       <div className={`add-container ${hidden}`}>
         <div className="add-input">
-          <div className="add-item" contentEditable="true"></div>
+          <input
+            className="add-item"
+            contentEditable="true"
+            value={newCardName as string}
+            onChange={(e) => setNewCardName(e.target.value)}
+          ></input>
         </div>
 
         <div className="add-btn-group">
-          <InputButton status={status} type={"Save"} onClick={saveNewCard} />
+          <InputButton
+            disabled={!newCardName.length as unknown as boolean}
+            status={status}
+            type={"Save"}
+            onClick={saveNewCard}
+          />
           <InputButton status={status} type={"Cancel"} onClick={toggleHidden} />
         </div>
       </div>

@@ -20,3 +20,8 @@ h1 {
 .hidden {
   display: none;
 }
+
+.no-click {
+  pointer-events: none;
+  opacity: 0.2;
+}
