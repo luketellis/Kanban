@@ -11,12 +11,14 @@
 }
 
 .exit-cross {
-  color: orangered;
+  color: transparent;
+  text-shadow: 0 0 0 orangered;
   float: right;
 }
 
 .exit-cross:hover {
-  color: red;
+  color: transparent;
+  text-shadow: 0 0 0 red;
 }
 
 h3 {

@@ -16,7 +16,7 @@ export const testData = [
   {
     id: 1,
     status: "Backlog",
-    title: "Learn Storybook",
+    title: "Setup Storybook",
     description: "Helps making components",
   },
   {
@@ -44,3 +44,7 @@ export const testData = [
     description: "Appium",
   },
 ];
+
+export const ItemTypes = {
+  CARD: "card",
+};

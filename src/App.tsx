@@ -6,6 +6,8 @@ import { states } from "./utils/constants";
 import { Status } from "./types/Status";
 import { testData } from "./utils/constants";
 import { ICard } from "./interfaces/ICard";
+import { DndProvider } from "react-dnd";
+import { HTML5Backend } from "react-dnd-html5-backend";
 
 function App() {
   const [cards, setCards] = useState<ICard[]>([]);
@@ -36,7 +38,7 @@ function App() {
   };
 
   return (
-    <>
+    <DndProvider backend={HTML5Backend}>
       <h1>Kanban Board</h1>
       <div className="kanban-container">
         {states.map((state, i) => (
@@ -50,7 +52,7 @@ function App() {
           />
         ))}
       </div>
-    </>
+    </DndProvider>
   );
 }
 
