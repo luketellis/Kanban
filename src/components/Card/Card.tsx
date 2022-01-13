@@ -2,7 +2,6 @@ import React from "react";
 import "./card.css";
 import { ICard } from "../../interfaces/ICard";
 import { useDrag } from "react-dnd";
-import { ItemTypes } from "../../utils/constants";
 
 interface Props {
   card: ICard;
@@ -15,7 +14,8 @@ function Card({ card, removeCard }: Props) {
   };
 
   const [{ isDragging }, dragRef] = useDrag(() => ({
-    type: ItemTypes.CARD,
+    type: "card",
+    item: card,
     collect: (monitor) => ({
       isDragging: !!monitor.isDragging(),
     }),

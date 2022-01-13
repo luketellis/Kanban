@@ -10,11 +10,11 @@ import { DndProvider } from "react-dnd";
 import { HTML5Backend } from "react-dnd-html5-backend";
 
 function App() {
-  const [cards, setCards] = useState<ICard[]>([]);
+  const [cards, setCards] = useState<ICard[]>(testData as ICard[]);
   const [numCards, setNumCards] = useState<number>(0);
 
   const getCardsByStatus = (status: Status): Array<ICard> => {
-    const filteredCards = cards.filter((card) => {
+    const filteredCards: Array<ICard> = cards.filter((card) => {
       return card.status === status;
     });
 
@@ -22,15 +22,47 @@ function App() {
   };
 
   useEffect(() => {
-    setCards(testData as Array<ICard>);
-  }, []);
-
-  useEffect(() => {
     setNumCards(cards.length);
+    console.log("cards", cards);
   }, [cards]);
 
   const addNewCard = (newCard: ICard): void => {
     setCards((prevState) => [...prevState, newCard]);
+  };
+
+  const editCardStatus = (
+    cardId: number,
+    property: string = "status",
+    newValue: string
+  ): void => {
+    try {
+      console.log("cards at start", cards);
+
+      let oldCardArray: Array<ICard> = [...cards];
+
+      var matchingCardArray = cards.filter((card) => {
+        return card.id === cardId;
+      });
+
+      var nonMatchingCardArray = oldCardArray.filter((card) => {
+        return card.id !== cardId;
+      });
+
+      var matchingCard: any = { ...matchingCardArray[0] };
+      matchingCard[property] = newValue;
+      const cardArrayWithUpdatedValues = [
+        ...nonMatchingCardArray,
+        matchingCard,
+      ];
+
+      cardArrayWithUpdatedValues.sort((a, b) => a.id - b.id);
+      setCards(cardArrayWithUpdatedValues);
+
+      console.log("cards at end", cardArrayWithUpdatedValues);
+    } catch (e: any) {
+      console.log(e.message);
+      return;
+    }
   };
 
   const removeCard = (id: number): void => {
@@ -46,6 +78,7 @@ function App() {
             key={i}
             addNewCard={addNewCard}
             cards={getCardsByStatus(state.status as Status)}
+            editCardStatus={editCardStatus}
             removeCard={removeCard}
             numCards={numCards}
             status={state.status as Status}
