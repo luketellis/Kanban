@@ -24,22 +24,33 @@ function Column({
   removeCard,
   status,
 }: Props) {
-  const [{ isOver }, dropRef] = useDrop(() => ({
-    accept: "card",
-    drop: (item: any) => {
-      //alert(JSON.stringify(item));
-      editCardStatus(item.id as number, "status", status);
-    },
-    collect: (monitor) => ({
-      isOver: !!monitor.isOver(),
+  const getCardsByStatus = (status: Status): Array<ICard> => {
+    const cardsByStatus: Array<ICard> = cards.filter((card) => {
+      return card.status === status;
+    });
+
+    return cardsByStatus;
+  };
+
+  const [{ isOver }, dropRef] = useDrop(
+    () => ({
+      accept: "card",
+      drop: (item: ICard) => {
+        alert(JSON.stringify(item));
+        editCardStatus(item.id as number, "status", status);
+      },
+      collect: (monitor) => ({
+        isOver: !!monitor.isOver(),
+      }),
     }),
-  }));
+    [cards]
+  );
 
   return (
     <span className="column" ref={dropRef}>
       <ColumnHeading status={status} />
 
-      {cards.map((card, i) => {
+      {getCardsByStatus(status).map((card, i) => {
         return <Card card={card} key={i} removeCard={removeCard} />;
       })}
       {isOver && <div>Drop Here!</div>}

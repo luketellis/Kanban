@@ -13,14 +13,6 @@ function App() {
   const [cards, setCards] = useState<ICard[]>(testData as ICard[]);
   const [numCards, setNumCards] = useState<number>(0);
 
-  const getCardsByStatus = (status: Status): Array<ICard> => {
-    const filteredCards: Array<ICard> = cards.filter((card) => {
-      return card.status === status;
-    });
-
-    return filteredCards;
-  };
-
   useEffect(() => {
     setNumCards(cards.length);
     console.log("cards", cards);
@@ -55,7 +47,8 @@ function App() {
         matchingCard,
       ];
 
-      cardArrayWithUpdatedValues.sort((a, b) => a.id - b.id);
+      //cardArrayWithUpdatedValues.sort((a, b) => a.id - b.id);
+
       setCards(cardArrayWithUpdatedValues);
 
       console.log("cards at end", cardArrayWithUpdatedValues);
@@ -77,7 +70,7 @@ function App() {
           <Column
             key={i}
             addNewCard={addNewCard}
-            cards={getCardsByStatus(state.status as Status)}
+            cards={cards}
             editCardStatus={editCardStatus}
             removeCard={removeCard}
             numCards={numCards}
