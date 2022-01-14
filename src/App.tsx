@@ -47,7 +47,7 @@ function App() {
         matchingCard,
       ];
 
-      //cardArrayWithUpdatedValues.sort((a, b) => a.id - b.id);
+      cardArrayWithUpdatedValues.sort((a, b) => a.id - b.id);
 
       setCards(cardArrayWithUpdatedValues);
 

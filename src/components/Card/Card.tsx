@@ -13,13 +13,16 @@ function Card({ card, removeCard }: Props) {
     removeCard(card.id);
   };
 
-  const [{ isDragging }, dragRef] = useDrag(() => ({
-    type: "card",
-    item: card,
-    collect: (monitor) => ({
-      isDragging: !!monitor.isDragging(),
+  const [{ isDragging }, dragRef] = useDrag(
+    () => ({
+      type: "card",
+      item: card,
+      collect: (monitor) => ({
+        isDragging: !!monitor.isDragging(),
+      }),
     }),
-  }));
+    [card]
+  );
 
   return (
     <div className="card grow" ref={dragRef}>
