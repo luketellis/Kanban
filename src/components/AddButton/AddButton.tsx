@@ -1,11 +1,11 @@
 import React from "react";
 import "./addButton.css";
 
-interface Props {
+interface AddButtonProps {
   onClick: React.MouseEventHandler<HTMLElement>;
 }
 
-function AddButton({ onClick }: Props) {
+function AddButton({ onClick }: AddButtonProps) {
   return (
     <button className="add-btn" onClick={onClick}>
       + Add Item

@@ -3,12 +3,12 @@ import "./card.css";
 import { ICard } from "../../interfaces/ICard";
 import { useDrag } from "react-dnd";
 
-interface Props {
+interface CardProps {
   card: ICard;
   removeCard(id: number): void;
 }
 
-function Card({ card, removeCard }: Props) {
+function Card({ card, removeCard }: CardProps) {
   const deleteCard = () => {
     removeCard(card.id);
   };

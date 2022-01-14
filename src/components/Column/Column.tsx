@@ -7,7 +7,7 @@ import { ICard } from "../../interfaces/ICard";
 import { Status } from "../../types/Status";
 import { useDrop } from "react-dnd";
 
-interface Props {
+interface ColumnProps {
   addNewCard(newCard: ICard): void;
   cards: Array<ICard>;
   numCards: number;
@@ -23,7 +23,7 @@ function Column({
   numCards,
   removeCard,
   status,
-}: Props) {
+}: ColumnProps) {
   const getCardsByStatus = (status: Status): Array<ICard> => {
     const cardsByStatus: Array<ICard> = cards.filter((card) => {
       return card.status === status;

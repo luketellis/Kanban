@@ -1,4 +1,4 @@
-import React, { ChangeEvent, useState } from "react";
+import React, { useState } from "react";
 import "./addContainer.css";
 import { Status } from "../../types/Status";
 import AddButton from "../AddButton/AddButton";
@@ -6,13 +6,13 @@ import { ICard } from "../../interfaces/ICard";
 import InputButton from "../InputButton/InputButton";
 import TextInput from "../TextInput/TextInput";
 
-interface Props {
+interface AddContainerProps {
   addNewCard(newCard: ICard): void;
   numCards: number;
   status: Status;
 }
 
-function AddContainer({ addNewCard, numCards, status }: Props) {
+function AddContainer({ addNewCard, numCards, status }: AddContainerProps) {
   const [newTitle, setNewTitle] = useState<String>("");
   const [newDescription, setNewDescription] = useState<String>("");
   const [hidden, setHidden] = useState<String>("hidden");

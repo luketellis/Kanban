@@ -2,14 +2,14 @@ import React from "react";
 import "./inputButton.css";
 import { Status } from "../../types/Status";
 
-interface Props {
+interface InputButtonProps {
   disabled?: boolean;
   onClick: React.MouseEventHandler<HTMLElement>;
   status: Status;
   type: "Cancel" | "Save";
 }
 
-function InputButton({ disabled = false, onClick, type }: Props) {
+function InputButton({ disabled = false, onClick, type }: InputButtonProps) {
   return (
     <span
       className={`input-btn ${type.toLowerCase()}-btn ${

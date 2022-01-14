@@ -2,11 +2,11 @@ import React from "react";
 import "./columnHeading.css";
 import { Status } from "../../types/Status";
 
-interface Props {
+interface ColumnHeadingProps {
   status: Status;
 }
 
-function ColumnHeading({ status }: Props) {
+function ColumnHeading({ status }: ColumnHeadingProps) {
   return (
     <div className="headingCard">
       <h2> {status} </h2>
