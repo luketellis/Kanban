@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import "./App.css";
-import "./components/Column/Column";
 import Column from "./components/Column/Column";
 import { states } from "./utils/constants";
 import { Status } from "./types/Status";
