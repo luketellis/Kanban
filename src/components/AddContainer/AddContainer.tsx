@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { ChangeEvent, useState } from "react";
 import "./addContainer.css";
 import { Status } from "../../types/Status";
 import AddButton from "../AddButton/AddButton";
@@ -42,12 +42,12 @@ function AddContainer({ addNewCard, numCards, status }: Props) {
       <div className={`add-container ${hidden}`}>
         {/* <div className="add-inputs"> </div> */}
         <TextInput
-          onChange={setNewTitle}
+          onChange={(e) => setNewTitle(e.target.value)}
           placeholder="New Title..."
           value={newTitle as string}
         />
         <TextInput
-          onChange={setNewDescription}
+          onChange={(e) => setNewDescription(e.target.value)}
           placeholder="New Description..."
           value={newDescription as string}
         />

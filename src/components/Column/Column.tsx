@@ -36,7 +36,6 @@ function Column({
     () => ({
       accept: "card",
       drop: (item: ICard) => {
-        alert(JSON.stringify(item));
         editCardStatus(item.id as number, "status", status);
       },
       collect: (monitor) => ({

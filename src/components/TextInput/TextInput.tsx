@@ -1,22 +1,10 @@
-import React from "react";
+import React, { HTMLAttributes, InputHTMLAttributes } from "react";
 import "./textInput.css";
 
-interface Props {
-  onChange: React.Dispatch<React.SetStateAction<any>>;
-  placeholder: string;
-  value: string;
-}
+interface ITextInputProps extends InputHTMLAttributes<HTMLInputElement> {}
 
-function TextInput({ onChange, placeholder, value }: Props) {
-  return (
-    <input
-      className="text-input"
-      onChange={(e) => onChange(e.target.value)}
-      maxLength={30}
-      placeholder={placeholder}
-      value={value as string}
-    ></input>
-  );
+function TextInput(props: ITextInputProps) {
+  return <input className="text-input" maxLength={30} {...props}></input>;
 }
 
 export default TextInput;
