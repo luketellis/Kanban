@@ -27,12 +27,13 @@ function AddContainer({ addNewCard, numCards, status }: AddContainerProps) {
 
   const saveNewCard = () => {
     addNewCard({
-      id: ++numCards,
+      id: numCards,
       status: status,
       title: newTitle as string,
       description: newDescription as string,
     });
     setNewTitle("");
+    setNewDescription("");
     hideAddContainer();
   };
 

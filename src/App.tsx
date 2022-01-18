@@ -10,11 +10,10 @@ import { HTML5Backend } from "react-dnd-html5-backend";
 
 function App() {
   const [cards, setCards] = useState<ICard[]>(testData as ICard[]);
-  const [numCards, setNumCards] = useState<number>(0);
+  const [numCards, setNumCards] = useState<number>(cards.length);
 
   useEffect(() => {
-    setNumCards(cards.length);
-    console.log("cards", cards);
+    setNumCards((prevState) => ++prevState);
   }, [cards]);
 
   const addNewCard = (newCard: ICard): void => {
@@ -45,8 +44,6 @@ function App() {
         ...nonMatchingCardArray,
         matchingCard,
       ];
-
-      cardArrayWithUpdatedValues.sort((a, b) => a.id - b.id);
 
       setCards(cardArrayWithUpdatedValues);
 
