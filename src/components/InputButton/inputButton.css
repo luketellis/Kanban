@@ -2,6 +2,7 @@
   transition: all 0.3s ease-in;
   flex: 1;
   border-radius: 0.5em;
+  padding: 0.5em 1em;
 }
 
 .input-btn:hover {

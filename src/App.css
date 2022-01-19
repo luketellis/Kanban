@@ -23,7 +23,7 @@ h1 {
 
 .no-click {
   pointer-events: none;
-  opacity: 0.2;
+  opacity: 0.4;
 }
 
 .text-cursor {
