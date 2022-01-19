@@ -28,17 +28,17 @@ function App() {
     try {
       console.log("cards at start", cards);
 
-      let oldCardArray: Array<ICard> = [...cards];
+      const oldCardArray: Array<ICard> = [...cards];
 
-      var matchingCardArray = cards.filter((card) => {
+      const matchingCardArray = cards.filter((card) => {
         return card.id === cardId;
       });
 
-      var nonMatchingCardArray = oldCardArray.filter((card) => {
+      const nonMatchingCardArray = oldCardArray.filter((card) => {
         return card.id !== cardId;
       });
 
-      var matchingCard: any = { ...matchingCardArray[0] };
+      const matchingCard: any = { ...matchingCardArray[0] };
       matchingCard[property] = newValue;
       const cardArrayWithUpdatedValues = [
         ...nonMatchingCardArray,

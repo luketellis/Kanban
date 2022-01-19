@@ -11,14 +11,16 @@ interface InputButtonProps {
 
 function InputButton({ disabled = false, onClick, type }: InputButtonProps) {
   return (
-    <span
+    <button
       className={`input-btn ${type.toLowerCase()}-btn ${
         disabled && "no-click"
       }`}
       onClick={onClick}
+      data-testid={"input-btn"}
+      disabled={disabled}
     >
       <strong>{type}</strong>
-    </span>
+    </button>
   );
 }
 

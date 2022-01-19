@@ -1,10 +1,3 @@
-export enum States {
-  "To Do" = "1",
-  "In Progress" = "2",
-  "Code Review" = "3",
-  "Complete" = "4",
-}
-
 export const states = [
   { number: 1, status: "Backlog" },
   { number: 2, status: "In Progress" },
@@ -23,7 +16,7 @@ export const testData = [
     id: 2,
     status: "In Progress",
     title: "Make Typescript App",
-    description: "Kanban Board",
+    description: "Create Board",
   },
   {
     id: 3,

@@ -55,7 +55,7 @@ function AddContainer({ addNewCard, numCards, status }: AddContainerProps) {
 
         <div className="add-btn-group">
           <InputButton
-            disabled={!newTitle.length as unknown as boolean}
+            disabled={(newTitle.length <= 0) as boolean}
             status={status}
             type={"Save"}
             onClick={saveNewCard}
