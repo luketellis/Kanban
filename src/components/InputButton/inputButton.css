@@ -19,9 +19,9 @@
 }
 
 .save-btn {
-  background-color: green;
+  background-color: lightgreen;
 }
 
 .save-btn:hover {
-  background-color: darkgreen;
+  background-color: green;
 }
