@@ -26,8 +26,6 @@ function App() {
     newValue: string
   ): void => {
     try {
-      console.log("cards at start", cards);
-
       const oldCardArray: Array<ICard> = [...cards];
 
       const matchingCardArray = cards.filter((card) => {
@@ -46,8 +44,6 @@ function App() {
       ];
 
       setCards(cardArrayWithUpdatedValues);
-
-      console.log("cards at end", cardArrayWithUpdatedValues);
     } catch (e: any) {
       console.log(e.message);
       return;
