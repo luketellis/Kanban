@@ -14,3 +14,15 @@ Testing done using Jest and Cypress
 $ npm install
 $ npm start
 ```
+
+# Testing this app
+
+Cypress tests can be run with:
+$ npm run cypress
+
+Jest tests can be run with:
+$ npm run test
+
+## Example Run
+
+![](KanbanDemo.gif)
