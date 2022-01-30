@@ -10,14 +10,11 @@ import { HTML5Backend } from "react-dnd-html5-backend";
 
 function App() {
   const [cards, setCards] = useState<ICard[]>(testData as ICard[]);
-  const [numCards, setNumCards] = useState<number>(cards.length);
-
-  useEffect(() => {
-    setNumCards((prevState) => ++prevState);
-  }, [cards]);
+  const [numCards, setNumCards] = useState<number>(cards.length + 1);
 
   const addNewCard = (newCard: ICard): void => {
     setCards((prevState) => [...prevState, newCard]);
+    setNumCards((prevState) => ++prevState);
   };
 
   const editCardStatus = (
